@@ -11,7 +11,6 @@ import { HeaderWrapper, HeaderLeft, HeaderRight } from './style';
 const AppHeader = memo(() => {
 
   const showSelectItem = (item, index) => {
-    console.log(item);
     if (index < 3) {
       return (
         <NavLink to={item.link}>

@@ -18,9 +18,8 @@ const routers = [
   {
     path: '/',
     exact: true,
-    // component: Discover,
     render:()=>(
-      <Redirect to={"/discover"} />
+      <Redirect to="/discover" />
     )
   },
   {
