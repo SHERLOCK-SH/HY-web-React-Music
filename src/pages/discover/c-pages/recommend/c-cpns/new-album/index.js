@@ -4,7 +4,7 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 import { Carousel } from 'antd';
 import { AlbumWrapper } from './style';
 import ThemeHeaderRCM from '@/components/theme-header-rcm';
-import { getNewAlbumsAction } from '../../store/actionCreators';
+import { getNewAlbumsData } from '../../store/actionCreators';
 import AlbumCover from '@/components/album-cover';
 
 const NewAlbum = memo((props) => {
@@ -16,7 +16,7 @@ const NewAlbum = memo((props) => {
   }), shallowEqual)
 
   useEffect(() => {
-    dispatch(getNewAlbumsAction(10))
+    dispatch(getNewAlbumsData(10))
   }, [dispatch])
 
   const pageRef = useRef();

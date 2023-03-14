@@ -24,3 +24,12 @@ export const getNewAlbums = (limit) => {
     }
   })
 }
+
+export const getTopList = (id) => {
+  return request({
+    url: "/playlist/detail",
+    params: {
+      id
+    }
+  })
+}

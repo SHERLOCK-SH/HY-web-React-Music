@@ -10,7 +10,7 @@ import {
   HotRecommendWrapper
 } from './style';
 
-import { getHotRecommendAction } from '../../store/actionCreators';
+import { getHotRecommendData } from '../../store/actionCreators';
 
 const HotRecommend = memo((props) => {
 
@@ -21,7 +21,7 @@ const HotRecommend = memo((props) => {
   }), shallowEqual)
 
   useEffect(()=>{
-    dispatch(getHotRecommendAction(HOT_RECOMMEND_LIMIT))
+    dispatch(getHotRecommendData(HOT_RECOMMEND_LIMIT))
   },[dispatch])
 
   return (

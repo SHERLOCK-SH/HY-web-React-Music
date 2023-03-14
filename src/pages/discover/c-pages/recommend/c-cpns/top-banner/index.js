@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useRef, useState, useCallback, } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
-import { getTopBannerAction } from '../../store/actionCreators'
+import { getTopBannerData } from '../../store/actionCreators'
 
 import { Carousel } from 'antd';
 import {
@@ -24,7 +24,7 @@ const TopBanner = memo(() => {
 
   const BannerRef = useRef();
   useEffect(() => {
-    dispatch(getTopBannerAction());
+    dispatch(getTopBannerData());
   }, [dispatch])
 
   const bannerChange = useCallback((form, to) => {
@@ -40,7 +40,7 @@ const TopBanner = memo(() => {
     <BannerWrapper bgImage={bgImage}>
       <div className='banner wrap_v2'>
         <BannerLeft>
-          <Carousel effect='fade' dots={{ className: "banner-dots" }} ref={BannerRef} beforeChange={bannerChange}>
+          <Carousel effect='fade' dots={{ className: "banner-dots" }} autoplay ref={BannerRef} beforeChange={bannerChange}>
             {
               topBanners.map((item, index) => (
                 <div className='banner-item' key={item.imageUrl}>
